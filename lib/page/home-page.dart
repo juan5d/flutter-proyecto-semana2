@@ -29,122 +29,114 @@ class _MyHomePageState extends State<HomePage> {
     bool _alreadySaved = true;
     return Column(children: [
       Container(
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Expanded(
-                  child: _contenedorM(),
-                  flex: 1,
-                ),
-                Expanded(
-                  child: _contenedorF(),
-                  flex: 1,
-                ),
-              ],
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Expanded(
+              child: _contenedorM(),
+              flex: 1,
             ),
-            Row(children: <Widget>[
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    decoration: new BoxDecoration(
-                      color: Colors.black45,
-                      border: new Border.all(
-                          color: Colors.grey.shade900, width: 2.0),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.shade400.withOpacity(0.1),
-                          spreadRadius: 2,
-                          blurRadius: 7,
-                          offset: Offset(4, 4), // changes position of shadow
-                        ),
-                      ],
-                      borderRadius: new BorderRadius.circular(10.0),
-                    ),
-                    child: Column(
-                      children: [
-                        Text(
-                          "Estatura",
-                          style: TextStyle(
-                              fontFamily: 'RobotoMono',
-                              fontSize: 18,
-                              color: Colors.white.withOpacity(0.4)),
-                        ),
-                        Text(
-                          "${_progress.toInt()} cm",
-                          style: TextStyle(
-                              fontFamily: 'RobotoMono',
-                              fontSize: 40,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        CupertinoSlider(
-                            value: _progress,
-                            min: 0.0,
-                            max: 350.0,
-                            onChanged: (value) {
-                              setState(() {
-                                _progress = value.roundToDouble();
-                              });
-                            }),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ]),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Expanded(
-                  child: _contenedorP(),
-                  flex: 1,
-                ),
-                Expanded(
-                  child: _contenedorE(),
-                  flex: 1,
-                ),
-              ],
+            Expanded(
+              child: _contenedorF(),
+              flex: 1,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                Expanded(
-                    child: ElevatedButton(
-                        onPressed: () {
-                          setState(() {});
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => ResultadosPage(
-                                        edad: _counter2,
-                                        estatura: _progress,
-                                        peso: _counter,
-                                        genero: _male,
-                                      )));
-                        },
-                        style: ElevatedButton.styleFrom(
-                            primary: Colors.pink.shade600,
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 20, vertical: 10),
-                            textStyle: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold)),
-                        child: Text(
-                          "Mostrar Resultados",
-                          style: TextStyle(
-                              fontFamily: 'RobotoMono',
-                              fontWeight: FontWeight.bold),
-                        )))
-              ],
-            )
           ],
         ),
       ),
+      Expanded(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            decoration: new BoxDecoration(
+              color: Colors.black45,
+              border: new Border.all(color: Colors.grey.shade900, width: 2.0),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.shade400.withOpacity(0.1),
+                  spreadRadius: 2,
+                  blurRadius: 7,
+                  offset: Offset(4, 4), // changes position of shadow
+                ),
+              ],
+              borderRadius: new BorderRadius.circular(10.0),
+            ),
+            child: Column(
+              children: [
+                Text(
+                  "Estatura",
+                  style: TextStyle(
+                      fontFamily: 'RobotoMono',
+                      fontSize: 18,
+                      color: Colors.white.withOpacity(0.4)),
+                ),
+                Text(
+                  "${_progress.toInt()} cm",
+                  style: TextStyle(
+                      fontFamily: 'RobotoMono',
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold),
+                ),
+                CupertinoSlider(
+                    value: _progress,
+                    min: 0.0,
+                    max: 350.0,
+                    onChanged: (value) {
+                      setState(() {
+                        _progress = value.roundToDouble();
+                      });
+                    }),
+              ],
+            ),
+          ),
+        ),
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Expanded(
+            child: _contenedorP(),
+            flex: 1,
+          ),
+          Expanded(
+            child: _contenedorE(),
+            flex: 1,
+          ),
+        ],
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: <Widget>[
+          Expanded(
+              child: ElevatedButton(
+                  onPressed: () {
+                    setState(() {});
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ResultadosPage(
+                                  edad: _counter2,
+                                  estatura: _progress,
+                                  peso: _counter,
+                                  genero: _male,
+                                )));
+                  },
+                  style: ElevatedButton.styleFrom(
+                      primary: Colors.pink.shade600,
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      textStyle:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                  child: Text(
+                    "Mostrar Resultados",
+                    style: TextStyle(
+                        fontFamily: 'RobotoMono', fontWeight: FontWeight.bold),
+                  )))
+        ],
+      )
     ]);
   }
 
