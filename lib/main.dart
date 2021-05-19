@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:taller3/page/home-page.dart';
+
+import 'page/home-page.dart';
 
 void main() {
   runApp(MyApp());
