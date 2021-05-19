@@ -239,6 +239,7 @@ class _MyHomePageState extends State<HomePage> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: FloatingActionButton(
+                  heroTag: "btn1",
                   onPressed: () {
                     setState(() {
                       // This call to setState tells the Flutter framework that something has
@@ -263,6 +264,7 @@ class _MyHomePageState extends State<HomePage> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: FloatingActionButton(
+                  heroTag: "btn2",
                   onPressed: () {
                     setState(() {
                       // This call to setState tells the Flutter framework that something has
@@ -331,6 +333,7 @@ class _MyHomePageState extends State<HomePage> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: FloatingActionButton(
+                  heroTag: "btn3",
                   onPressed: () {
                     setState(() {
                       // This call to setState tells the Flutter framework that something has
@@ -355,6 +358,7 @@ class _MyHomePageState extends State<HomePage> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: FloatingActionButton(
+                  heroTag: "btn4",
                   onPressed: () {
                     setState(() {
                       // This call to setState tells the Flutter framework that something has
